@@ -26,3 +26,7 @@ First of, in [src](./src), it contains the code that we use for exploring the ab
 Secondly, in [TODO](), it contains notes where we describe the concepts we find and explore. This is also where our evaluations and experiences will be documented.
 
 Lastly, in [TODO](), it contains standards documents which describe the interfaces a program should implement to call itself a Kodama.
+
+## Related Work
+
+- [Structure Editors: Old Hat or Future Vision?](https://link.springer.com/chapter/10.1007/978-3-642-32341-6_6), [free download](https://projects.fbi.h-da.de/~b.humm/pub/Gomolka_Humm_-_Structure_Editors__Springer_ENASE_.pdf)
