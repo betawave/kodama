@@ -1,5 +1,10 @@
 # Kodama
 
+> We hold these truth to be self evident, that code is not text and should not be treated as such, [...]
+[^1]
+
+[^1]: On a serious note, all that we are saying in this repository is not based on empirical data or extensive research.  We are only some dude(tt)s with personal experiences, ideas and prefrences.
+
 ### What's a Kodama?
 
 A Kodama - originally the name of japanese tree spirits - is a program for interfacing with some kind of tree structure.  Specifically, a [LANG]-Kodama may be used to work with a [LANG] syntax tree representing a program.  It may be used to create, destroy, modify and show a particular syntax tree.
