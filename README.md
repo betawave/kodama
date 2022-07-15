@@ -11,8 +11,8 @@ Via the Kodama project we want to explore the ideas behind structure editors and
 Project Agenda:  
 1. Implement a very basic tree Kodama and CLI editor frontend to evaluate most abstract editing experience.
    For further reasoning of this step see [TODO](). After evaluation either:
-   a. stop project if not promising
-   b. continue with 2. if interesting
+    a. stop project if not promising
+    b. continue with 2. if interesting
 2. Implement a Rust-Kodama and integrate it into Emacs
 3. Reimplement the Rust-Kodama using the initial Rust-Kodama (i.e. bootstrap).
    This should provide us with real world experience into the usability of the concept.
