@@ -19,4 +19,10 @@ Project Agenda:
 
 ### What is the purpose and structure of this *repository*?
 
-TODO
+The purpose of this repository is threefold:  
+
+First of, in [src](./src), it contains the code that we use for exploring the abtract/minimal tree Kodama, the initial Rust-Kodama and finally the bootstrapped Rust-Kodama.
+
+Secondly, in [TODO](), it contains notes where we describe the concepts we find and explore. This is also where our evaluations and experiences will be documented.
+
+Lastly, in [TODO](), it contains standards documents which describe the interfaces a program should implement to call itself a Kodama.
