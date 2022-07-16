@@ -1,6 +1,6 @@
 # Kodama
 
-> We hold these truth to be self evident, that code is not text and should not be treated as such, [...]
+> We hold these truth to be [argument-necessitating], that code is not text and should not be treated as such, that code in textual representation has advantages which need to be retained, that we should not parse but serialize, that code - as well as thought - should be freed from the shakles of sequential narratives implied by text files and pages, that syntax is bliss, that metaprogramming should be a right of all programming languages and not a feature of a few [...]
 [^1]
 
 [^1]: On a serious note, all that we are saying in this repository is not based on empirical data or extensive research.  We are only some dude(tt)s with personal experiences, ideas and prefrences.
