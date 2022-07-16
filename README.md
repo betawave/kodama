@@ -34,4 +34,7 @@ Lastly, in [TODO](), it contains standards documents which describe the interfac
 
 ## Related Work
 
-- [Structure Editors: Old Hat or Future Vision?](https://link.springer.com/chapter/10.1007/978-3-642-32341-6_6), [free download](https://projects.fbi.h-da.de/~b.humm/pub/Gomolka_Humm_-_Structure_Editors__Springer_ENASE_.pdf)
+- [Paper - Structure Editors: Old Hat or Future Vision?](https://link.springer.com/chapter/10.1007/978-3-642-32341-6_6), [free download](https://projects.fbi.h-da.de/~b.humm/pub/Gomolka_Humm_-_Structure_Editors__Springer_ENASE_.pdf)
+- [Maybe;To be checked] [Tree Sitter](https://tree-sitter.github.io/tree-sitter/)
+- [Maybe;To be checked] [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
+- [Maybe;To be checked] [Proposed Msc. Project @ Uni Tübingen: Refactoring Macros](http://ps.informatik.uni-tuebingen.de/teaching/thesis/2019/11/25/refactoring-macros/)
