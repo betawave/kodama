@@ -41,3 +41,8 @@ Lastly, in [TODO](), it contains standards documents which describe the interfac
 - [Maybe;To be checked] [Tree Sitter](https://tree-sitter.github.io/tree-sitter/)
 - [Maybe;To be checked] [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
 - [Maybe;To be checked] [Proposed Msc. Project @ Uni Tübingen: Refactoring Macros](http://ps.informatik.uni-tuebingen.de/teaching/thesis/2019/11/25/refactoring-macros/)
+
+## Tangentially Related
+
+- [Paper - The Semantics of Syntax (PDF)](https://conf.researchr.org/getImage/OBT-2016/orig/OBT_2016_paper_10.pdf)
+- [Vis - Modal Editing x Structural Regular Expressions](https://github.com/martanne/vis)
