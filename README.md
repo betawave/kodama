@@ -35,6 +35,9 @@ Lastly, in [TODO](), it contains standards documents which describe the interfac
 ## Related Work
 
 - [Paper - Structure Editors: Old Hat or Future Vision?](https://link.springer.com/chapter/10.1007/978-3-642-32341-6_6), [free download](https://projects.fbi.h-da.de/~b.humm/pub/Gomolka_Humm_-_Structure_Editors__Springer_ENASE_.pdf)
+- [Msc. Thesis - Forest Structure Editor for TypeScript](https://github.com/tehwalris/forest)
+- [Paper - GopCaml Structure Editor for OCaml](https://arxiv.org/abs/2207.07423) [github repo](https://github.com/Gopiandcode/gopcaml-mode) [tutorial](https://discuss.ocaml.org/t/introducing-gopcaml-mode-structural-ocaml-editing/5310)
+- [Paper - Clase: cursor library for a structured editor](https://dl.acm.org/doi/10.1145/1543134.1411302) [pdf link](http://www.doc.ic.ac.uk/~tora/clase/CLASE-Short.pdf)
 - [Maybe;To be checked] [Tree Sitter](https://tree-sitter.github.io/tree-sitter/)
 - [Maybe;To be checked] [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
 - [Maybe;To be checked] [Proposed Msc. Project @ Uni Tübingen: Refactoring Macros](http://ps.informatik.uni-tuebingen.de/teaching/thesis/2019/11/25/refactoring-macros/)
