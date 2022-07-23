@@ -39,6 +39,7 @@ Lastly, in [TODO](), it contains standards documents which describe the interfac
 - [Msc. Thesis - Forest Structure Editor for TypeScript](https://www.research-collection.ethz.ch/handle/20.500.11850/526812), [pdf](https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/526812/masters-thesis-final-eth-Voinov-title-page.pdf?sequence=1&isAllowed=y), [talk on youtube](https://www.youtube.com/watch?v=ze_nJlKkckg), [github repo](https://github.com/tehwalris/forest)
 - [Paper - GopCaml Structure Editor for OCaml](https://arxiv.org/abs/2207.07423), [github repo](https://github.com/Gopiandcode/gopcaml-mode), [tutorial](https://discuss.ocaml.org/t/introducing-gopcaml-mode-structural-ocaml-editing/5310)
 - [Paper - Clase: cursor library for a structured editor](https://dl.acm.org/doi/10.1145/1543134.1411302), [pdf](http://www.doc.ic.ac.uk/~tora/clase/CLASE-Short.pdf)
+- [Paper - Programming environments based on structured editors : the Mentor experience](https://www.researchgate.net/publication/29650883_Programming_environments_based_on_structured_editors_the_Mentor_experience)
 - [Maybe;To be checked] [Tree Sitter](https://tree-sitter.github.io/tree-sitter/)
 - [Maybe;To be checked] [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
 - [Maybe;To be checked] [Proposed Msc. Project @ Uni Tübingen: Refactoring Macros](http://ps.informatik.uni-tuebingen.de/teaching/thesis/2019/11/25/refactoring-macros/)
