@@ -49,6 +49,7 @@ pub enum AbstractASTObject {
     Parent,
     Child,
     Sibling,
+    Leaf,
 }
 
 impl std::fmt::Display for AbstractASTObject {
@@ -58,6 +59,7 @@ impl std::fmt::Display for AbstractASTObject {
 	    AbstractASTObject::Parent => write!(f, "Parent"),
 	    AbstractASTObject::Child => write!(f, "Child"),
 	    AbstractASTObject::Sibling => write!(f, "Sibling"),
+	    AbstractASTObject::Leaf => write!(f, "Leaf"),
 	}
     }
 }

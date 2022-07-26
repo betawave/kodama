@@ -32,7 +32,8 @@ fn main() {
     let object_bindings = [ObjectBinding {key: 'R', object: AbstractASTObject::Root},
 			   ObjectBinding {key: 'P', object: AbstractASTObject::Parent},
 			   ObjectBinding {key: 'C', object: AbstractASTObject::Child},
-			   ObjectBinding {key: 'S', object: AbstractASTObject::Sibling}];
+			   ObjectBinding {key: 'S', object: AbstractASTObject::Sibling},
+			   ObjectBinding {key: 'L', object: AbstractASTObject::Leaf}];
 
     let term = Term::stdout();
     term.clear_screen().expect("Could not clear screen!");
