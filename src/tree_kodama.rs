@@ -4,10 +4,13 @@ pub struct AbstractAST {
     children: Vec<AbstractAST>
 }
 
-pub struct AbstractASTContext<'a> {
-    elders: Vec<AbstractAST>,
-    ancestors: &'a AbstractASTContext<'a>,
-    younglings: Vec<AbstractAST>,
+pub enum AbstractASTContext<'a> {
+    Top,
+    Path {
+	elders: Vec<AbstractAST>,
+	ancestors: &'a AbstractASTContext<'a>,
+	younglings: Vec<AbstractAST>,
+    },
 }
 
 pub struct AbstractASTBuffer<'a> {
