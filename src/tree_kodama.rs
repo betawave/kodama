@@ -18,9 +18,16 @@ pub struct AbstractASTBuffer<'a> {
     context: AbstractASTContext<'a>,
 }
 
-impl AbstractASTBuffer<'_> {
-    fn execute(&mut self, action: AbstractASTAction, object: AbstractASTObject)
-	       -> Result<(), String> {
+impl<'a> AbstractASTBuffer<'a> {
+    pub fn new() -> AbstractASTBuffer<'a> {
+	AbstractASTBuffer {
+	    cursor: AbstractAST {children: Vec::new() },
+	    context: AbstractASTContext::Top,
+	}
+    }
+
+    pub fn execute(&mut self, action: AbstractASTAction, object: AbstractASTObject)
+		   -> Result<(), String> {
 	Err("Procedure not implemented!".to_string())
     }
 }

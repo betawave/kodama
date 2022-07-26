@@ -43,6 +43,8 @@ fn main() {
     let mut action: Option<AbstractASTAction> = None;
     let mut object: Option<AbstractASTObject> = None;
 
+    let mut buffer = AbstractASTBuffer::new();
+
     loop {
 	let input = term.read_key().unwrap();
 	match input {
@@ -79,7 +81,10 @@ fn main() {
 		if !matched {
 		    println!("Could not parse '{}'", in_char);
 		} else if action != None && object != None {
-		    println!("Executing {} {}", action.unwrap(), object.unwrap());
+		    let act = action.unwrap();
+		    let obj = object.unwrap();
+		    println!("Executing {} {}", act, obj);
+		    buffer.execute(act, obj);
 		    action = None;
 		    object = None;
 		}
