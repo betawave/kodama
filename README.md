@@ -1,11 +1,18 @@
 # Kodama
 
-> We hold these truth to be [argument-necessitating], that code is not text and should not be treated as such[^2], that code in textual representation has advantages which need to be retained, that we should not parse but serialize, that code - as well as thought - should be freed from the shakles of sequential narratives implied by text files and pages, that syntax is bliss, that metaprogramming should be a right of all programming languages and not a feature of a few, that in the context of current human-machine interface in use during programming one should rarely leave the home row - i.e. typing is preferable to pointing and clicking, that intuition builds on abstraction, that usability is strongly linked to familiarity and is therefore a conservative metric [...]
-[^1]
+> We hold these truth to be [argument-necessitating], that code is not text and should not be treated as such[^1], that code in textual representation has advantages which need to be retained[^2], that we should not parse but serialize[^3], that code - as well as thought - should be freed from the shakles of sequential narratives implied by text files and pages[^4], that syntax is bliss[^5], that metaprogramming should be a right of all programming languages and not a feature of a few[^6], that in the context of current human-machine interface in use during programming one should rarely leave the home row - i.e. typing is preferable to pointing and clicking[^7], that intuition builds on abstraction[^8], that usability is strongly linked to familiarity and is therefore a conservative metric[^9] [...]
 
-[^1]: On a serious note, all that we are saying in this repository is not based on empirical data or extensive research.  We are only some dude(tt)s with personal experiences, ideas and prefrences.
+On a serious note, all that we are saying in this repository is not based on empirical data or extensive research.  We are only some dude(tt)s with personal experiences, ideas and prefrences.
 
+[^1]: See TODO
 [^2]: See TODO
+[^3]: See TODO
+[^4]: See TODO
+[^5]: See TODO
+[^6]: See TODO
+[^7]: See TODO
+[^8]: See TODO
+[^9]: See TODO
 
 ### What's a Kodama?
 
