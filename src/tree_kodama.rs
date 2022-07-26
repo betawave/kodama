@@ -1,7 +1,21 @@
-pub struct AbstractASTBuffer {
+use std::vec::Vec;
+
+pub struct AbstractAST {
+    children: Vec<AbstractAST>
 }
 
-impl AbstractASTBuffer {
+pub struct AbstractASTContext<'a> {
+    elders: Vec<AbstractAST>,
+    ancestors: &'a AbstractASTContext<'a>,
+    younglings: Vec<AbstractAST>,
+}
+
+pub struct AbstractASTBuffer<'a> {
+    cursor: AbstractAST,
+    context: AbstractASTContext<'a>,
+}
+
+impl AbstractASTBuffer<'_> {
     fn execute(&mut self, action: AbstractASTAction, object: AbstractASTObject)
 	       -> Result<(), String> {
 	Err("Procedure not implemented!".to_string())
