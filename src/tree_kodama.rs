@@ -47,6 +47,7 @@ impl std::fmt::Display for AbstractASTAction {
 pub enum AbstractASTObject {
     Root,
     Parent,
+    This,
     Child,
     Sibling,
     Leaf,
@@ -57,6 +58,7 @@ impl std::fmt::Display for AbstractASTObject {
 	match self {
 	    AbstractASTObject::Root => write!(f, "Root"),
 	    AbstractASTObject::Parent => write!(f, "Parent"),
+	    AbstractASTObject::This => write!(f, "This"),
 	    AbstractASTObject::Child => write!(f, "Child"),
 	    AbstractASTObject::Sibling => write!(f, "Sibling"),
 	    AbstractASTObject::Leaf => write!(f, "Leaf"),

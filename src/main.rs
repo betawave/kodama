@@ -30,6 +30,7 @@ fn main() {
 			   ActionBinding {key: 'd', action: AbstractASTAction::Delete},
 			   ActionBinding {key: 'i', action: AbstractASTAction::Insert}];
     let object_bindings = [ObjectBinding {key: 'R', object: AbstractASTObject::Root},
+			   ObjectBinding {key: 'T', object: AbstractASTObject::This},
 			   ObjectBinding {key: 'P', object: AbstractASTObject::Parent},
 			   ObjectBinding {key: 'C', object: AbstractASTObject::Child},
 			   ObjectBinding {key: 'S', object: AbstractASTObject::Sibling},
