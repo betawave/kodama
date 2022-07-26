@@ -28,6 +28,7 @@ impl AbstractASTBuffer<'_> {
 
 #[derive(PartialEq, Clone, Copy, Debug)]
 pub enum AbstractASTAction {
+    GoTo,
     Move,
     Change,
     Delete,
@@ -37,6 +38,7 @@ pub enum AbstractASTAction {
 impl std::fmt::Display for AbstractASTAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
 	match self {
+	    AbstractASTAction::GoTo => write!(f, "GoTo"),
 	    AbstractASTAction::Move => write!(f, "Move"),
 	    AbstractASTAction::Change => write!(f, "Change"),
 	    AbstractASTAction::Delete => write!(f, "Delete"),

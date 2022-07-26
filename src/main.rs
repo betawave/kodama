@@ -25,7 +25,8 @@ Entering an Object without specifiying an action first implies 'Move'.
 */
 
 fn main() {
-    let action_bindings = [ActionBinding {key: 'm', action: AbstractASTAction::Move},
+    let action_bindings = [ActionBinding {key: 'g', action: AbstractASTAction::GoTo},
+			   ActionBinding {key: 'm', action: AbstractASTAction::Move},
                            ActionBinding {key: 'c', action: AbstractASTAction::Change},
 			   ActionBinding {key: 'd', action: AbstractASTAction::Delete},
 			   ActionBinding {key: 'i', action: AbstractASTAction::Insert}];
