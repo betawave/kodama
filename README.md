@@ -1,6 +1,6 @@
 # Kodama
 
-> We hold these truth to be [argument-necessitating], that code is not text and should not be treated as such[^1], that code in textual representation has advantages which need to be retained[^2], that we should not parse but serialize[^3], that code - as well as thought - should be freed from the shakles of sequential narratives implied by text files and pages[^4], that syntax is bliss[^5], that metaprogramming should be a right of all programming languages and not a feature of a few[^6], that in the context of current human-machine interface in use during programming one should rarely leave the home row - i.e. typing is preferable to pointing and clicking[^7], that intuition builds on abstraction[^8], that usability is strongly linked to familiarity and is therefore a conservative metric[^9] [...]
+> We hold these truth to be [argument-necessitating], that code is not text and should not be treated as such[^1], that code in textual representation has advantages which need to be retained[^2], that we should not parse but serialize[^3], that code - as well as thought - should be freed from the shakles of sequential narratives implied by text files and pages[^4], that syntax is bliss[^5], that metaprogramming should be a right of all programming languages and not a feature of a few[^6], that in the context of current human-machine interface in use during programming one should rarely leave the home row - i.e. typing is preferable to pointing and clicking[^7], that intuition builds on abstraction[^8], that learnabilty of a user interface requires immediate observability of cause and effect with intermediate steps in case of complex, composite actions[^9], that usability is strongly linked to familiarity and is therefore a conservative metric[^10], that the syntax system should aid in the development of corrent programs and not merely reject faulty ones[^11], that language tooling should be able to process partially completed programs - i.e. programs with holes - and expose language information to help fill these gaps[^12]  [...]
 
 On a serious note, all that we are saying in this repository is not based on empirical data or extensive research.  We are only some dude(tt)s with personal experiences, ideas and prefrences.
 
@@ -13,6 +13,9 @@ On a serious note, all that we are saying in this repository is not based on emp
 [^7]: See TODO
 [^8]: See TODO
 [^9]: See TODO
+[^10]: See TODO
+[^11]: See TODO ~ Mention Idris
+[^12]: See TODO ~ Maybe same as above
 
 ### What's a Kodama?
 
