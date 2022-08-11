@@ -1,3 +1,4 @@
+mod zipper;
 mod tree_kodama;
 use tree_kodama::{AbstractASTBuffer, AbstractASTAction, AbstractASTObject};
 use console::Term;
@@ -84,7 +85,10 @@ fn main() {
 		    let act = action.unwrap();
 		    let obj = object.unwrap();
 		    println!("Executing {} {}", act, obj);
-		    buffer.execute(act, obj);
+		    match buffer.execute(act, obj) {
+			Err(message) => println!("{}", message),
+			Ok(()) => (),
+		    }
 		    action = None;
 		    object = None;
 		}

@@ -1,34 +1,34 @@
 use std::vec::Vec;
+use crate::zipper::Zipper;
 
 pub struct AbstractAST {
     children: Vec<AbstractAST>
 }
 
-pub enum AbstractASTContext<'a> {
-    Top,
-    Path {
-	elders: Vec<AbstractAST>,
-	ancestors: &'a AbstractASTContext<'a>,
-	younglings: Vec<AbstractAST>,
-    },
+pub struct AbstractASTBuffer {
+    zipper: Zipper<AbstractAST>,
 }
 
-pub struct AbstractASTBuffer<'a> {
-    cursor: AbstractAST,
-    context: AbstractASTContext<'a>,
-}
-
-impl<'a> AbstractASTBuffer<'a> {
-    pub fn new() -> AbstractASTBuffer<'a> {
+impl AbstractASTBuffer {
+    pub fn new() -> Self {
 	AbstractASTBuffer {
-	    cursor: AbstractAST {children: Vec::new() },
-	    context: AbstractASTContext::Top,
+	    zipper: Zipper::new(AbstractAST { children: Vec::new() })
 	}
     }
 
     pub fn execute(&mut self, action: AbstractASTAction, object: AbstractASTObject)
 		   -> Result<(), String> {
-	Err("Procedure not implemented!".to_string())
+	match action {
+	    AbstractASTAction::GoTo => {
+		match object {
+		    AbstractASTObject::This => Ok(()),
+		    AbstractASTObject::Sibling =>
+			self.zipper.next().map_err(|_dc| "No next sibling!".to_string()),
+		    _ => Err("GoTo not yet implemented for given object.".to_string()),
+		}
+	    },
+	    _ => Err("Procedure not implemented!".to_string()),
+	}
     }
 }
 
