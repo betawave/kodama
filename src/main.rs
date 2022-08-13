@@ -17,10 +17,12 @@ struct ObjectBinding {
 Key Mapping:
 
 Actions:       Objects:
+g -> GoTo      T -> This
 m -> Move      R -> Root
 c -> Change    P -> Parent
 d -> Delete    C -> Child
 i -> Insert    S -> Sibling
+               L -> Leaf
 
 Entering an Object without specifiying an action first implies 'Move'.
 */

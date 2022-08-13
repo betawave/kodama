@@ -1,8 +1,20 @@
 use std::vec::Vec;
-use crate::zipper::Zipper;
+use crate::zipper::{Zipper, Tree};
 
 pub struct AbstractAST {
     children: Vec<AbstractAST>
+}
+
+impl Tree for AbstractAST {
+    fn empty() -> Self {
+	AbstractAST {
+	    children: Vec::new()
+	}
+    }
+
+    fn destruct(self) -> Vec<Self> {
+	self.children
+    }
 }
 
 pub struct AbstractASTBuffer {
@@ -24,6 +36,8 @@ impl AbstractASTBuffer {
 		    AbstractASTObject::This => Ok(()),
 		    AbstractASTObject::Sibling =>
 			self.zipper.next().map_err(|_dc| "No next sibling!".to_string()),
+		    AbstractASTObject::Child =>
+			self.zipper.down().map_err(|_dc| "No children!".to_string()),
 		    _ => Err("GoTo not yet implemented for given object.".to_string()),
 		}
 	    },

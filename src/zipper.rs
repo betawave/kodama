@@ -1,19 +1,24 @@
 use std::mem;
 
-pub struct Chain<T> {
+pub trait Tree {
+    fn empty() -> Self;
+    fn destruct(self) -> Vec<Self> where Self: Sized;
+}
+
+pub struct Chain<T: Tree> {
     younglings: Vec<T>,
     ancestors: Box<Path<T>>,
     elders: Vec<T>
 }
 
-type Path<T> = Option<Chain<T>>;
+type Path<T: Tree> = Option<Chain<T>>;
 
-pub struct Zipper<T> {
+pub struct Zipper<T: Tree> {
     cursor: T,
     context: Path<T>
 }
 
-impl<T> Zipper<T> {
+impl<T> Zipper<T> where T: Tree {
     pub fn new(tree: T) -> Self {
 	Zipper {
 	    cursor: tree,
@@ -24,7 +29,22 @@ impl<T> Zipper<T> {
     pub fn up(&mut self) {
     }
 
-    pub fn down(&mut self) {
+    pub fn down(&mut self) -> Result<(), ZipErr> {
+	let mut old_cursor = T::empty();
+	mem::swap(&mut old_cursor, &mut self.cursor);
+	let mut children = old_cursor.destruct();
+	let nc = children.pop();
+	self.cursor = match nc {
+	    None => return Err(ZipErr::NoBelow),
+	    Some(nc) => nc
+	};
+	let old_context = self.context.take();
+	self.context = Some( Chain {
+	    younglings: Vec::new(),
+	    ancestors: Box::new(old_context),
+	    elders: children
+	});
+	Ok(())
     }
 
     pub fn previous(&mut self) {
