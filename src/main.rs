@@ -1,5 +1,6 @@
 mod zipper;
 mod tree_kodama;
+mod vec_tree;
 use tree_kodama::{AbstractASTBuffer, AbstractASTAction, AbstractASTObject};
 use console::Term;
 

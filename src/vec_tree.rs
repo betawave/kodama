@@ -1,12 +1,23 @@
 use std::vec::Vec;
 
-pub struct TreeNode<'a> {
-    parent: Option<&'a TreeNode<'a>>, 
-    children: Vec<TreeNode<'a>>,
+pub struct MarkedTree {
+    tree: Tree,
+    marker: Marker,
 }
 
-impl<'a> TreeNode<'a> {
+type Marker = Vec<u16>;
 
+impl MarkedTree {
+}
+
+pub struct Tree {
+    children: Vec<Tree>,
+}
+
+impl Tree {
+    pub fn new() -> Self {
+
+    }
 }
 
 #[cfg(test)]
@@ -14,21 +25,17 @@ mod tests {
     use super::*;
     #[test]
     fn create_root() {
-        let root = TreeNode {
-            parent: None,
+        let root = Tree {
             children: Vec::new(),
         };
     }
 
     #[test]
     fn create_root_with_child() {
-        let mut root = TreeNode {
-            parent: None,
-            children: vec![TreeNode {
-                            parent: None,
+        let mut root = Tree {
+            children: vec![Tree {
                             children: Vec::new(),
                            }],
         };
-        root.children[0].parent = Some(&root);
     }
 }
