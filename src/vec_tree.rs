@@ -16,26 +16,33 @@ pub struct Tree {
 
 impl Tree {
     pub fn new() -> Self {
+        Tree {
+            children: Vec::new(),
+        }
+    }
+
+    pub fn add_child(&mut self, child: Tree) {
+        self.children.push(child);
+    }
+
+    pub fn remove_child() {
 
     }
+
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn create_root() {
-        let root = Tree {
-            children: Vec::new(),
-        };
-    }
+    fn create_tree_with_no_children() {
+        Tree::new();
+    } 
 
-    #[test]
-    fn create_root_with_child() {
-        let mut root = Tree {
-            children: vec![Tree {
-                            children: Vec::new(),
-                           }],
-        };
+    #[test] 
+    fn create_tree_with_child() {
+        let mut tree = Tree::new();
+        tree.add_child(Tree::new());
+        tree.add_child(Tree::new());
     }
 }
