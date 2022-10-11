@@ -17,7 +17,7 @@ pub struct MarkedTree {
 // *    *
 // | \
 // *  *
-type Marker = Vec<u16>;
+type Marker = Vec<usize>;
 
 impl MarkedTree {
     pub fn mark_tree(tree: Tree)-> Self {
@@ -30,7 +30,7 @@ impl MarkedTree {
     pub fn select_child(&mut self) {
     // change Marker in the right way, but i forgot how we want to implement the marker.
     //self.marker.change_vec()
-    
+         
     }
 
     pub fn select_parent(&mut self) {
@@ -41,16 +41,24 @@ impl MarkedTree {
 
     }
 
-    pub fn read_marker(&self)-> Marker {
+    pub fn get_marker(&self)-> &Marker {
         &self.marker
     }
     
-    pub fn delete_child() {
-        //this function should take the information of the marker and delete the specified child of
-        //the Tree. Should it delete the whole subtree or should it only delete the node and the
-        //grandparent is now responsible for the children?
-        //
-        //Does the Marker need to be resetet?
+    pub fn get_selected(&self)-> &Tree {
+
+        let mut walker = &self.tree;
+
+        for child_index in self.marker.iter() {
+            walker = &walker.children[*child_index];
+        }
+
+        walker    
+    }
+
+    pub fn delete_selected() {
+        //this function should take the information of the marker and delete the selected node of the Tree. The function will delete the selected subtree.
+        // The marker will be changed to the position of the parent of the deleted subtree.
     }
 }
 
