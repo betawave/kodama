@@ -17,6 +17,12 @@ On a serious note, all that we are saying in this repository is not based on emp
 [^11]: See TODO ~ Mention Idris
 [^12]: See TODO ~ Maybe same as above
 
+## NOTE: Try Emacs' [`evil-tree-edit`](https://github.com/ethan-leba/tree-edit) for hands-on experience of structure x modal editing!
+
+If you have a python project under active developmend at hand and you want to experience how structure editing compbined with modal editing might feel, have a go with [`evil-tree-edit`](https://github.com/ethan-leba/tree-edit)!  
+It is by far not complete or polished but is easy to install and its feature set is advanced enough to get a good impression.  
+In this project we aim for a similar interface, but our idea goes beyond `tree-edit` as we suggest that text might not be the best representation for code which remains unchallenged by projects like `tree-edit`, etc.
+
 ### What's a Kodama?
 
 A Kodama - originally the name of japanese tree spirits - is a program for interfacing with some kind of tree structure.  Specifically, a [LANG]-Kodama may be used to work with a [LANG] syntax tree representing a program.  It may be used to create, destroy, modify and show a particular syntax tree.
@@ -28,7 +34,7 @@ Via the Kodama project we want to explore the ideas behind structure editors and
 Project Agenda:  
 1. Implement a very basic tree Kodama and CLI editor frontend to evaluate most abstract editing experience.
    For further reasoning of this step see [TODO](). After evaluation either:
-    1. stop project if not promising
+    1. stop project if not promisi
     2. continue with 2. if interesting
 2. Implement a Rust-Kodama and integrate it into Emacs
 3. Reimplement the Rust-Kodama using the initial Rust-Kodama (i.e. bootstrap).
@@ -46,6 +52,10 @@ Lastly, in [TODO](), it contains standards documents which describe the interfac
 
 ## Related Work
 
+- [To be checked] [Very Similar Project - Vi like Structure Editor written in Rust](https://github.com/kneasle/sapling)
+- [Maybe;To be checked] [Tree Sitter](https://tree-sitter.github.io/tree-sitter/)
+   - [tree-edit](https://github.com/ethan-leba/tree-edit)
+   - [To be checked] [nVim Plugin Architext - Structure Editing in Vim](https://github.com/vigoux/architext.nvim)
 - [Paper - Structure Editors: Old Hat or Future Vision?](https://link.springer.com/chapter/10.1007/978-3-642-32341-6_6), [free download](https://projects.fbi.h-da.de/~b.humm/pub/Gomolka_Humm_-_Structure_Editors__Springer_ENASE_.pdf)
 - [(dead?) Project - Programtree](http://www.programtree.com/intro.htm) 
 - [Msc. Thesis - Forest Structure Editor for TypeScript](https://www.research-collection.ethz.ch/handle/20.500.11850/526812), [pdf](https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/526812/masters-thesis-final-eth-Voinov-title-page.pdf?sequence=1&isAllowed=y), [talk on youtube](https://www.youtube.com/watch?v=ze_nJlKkckg), [github repo](https://github.com/tehwalris/forest)
@@ -53,7 +63,7 @@ Lastly, in [TODO](), it contains standards documents which describe the interfac
    - [Paper - Clase: cursor library for a structured editor](https://dl.acm.org/doi/10.1145/1543134.1411302), [pdf](http://www.doc.ic.ac.uk/~tora/clase/CLASE-Short.pdf)
    - [Paper - GopCaml Structure Editor for OCaml](https://arxiv.org/abs/2207.07423), [github repo](https://github.com/Gopiandcode/gopcaml-mode), [tutorial](https://discuss.ocaml.org/t/introducing-gopcaml-mode-structural-ocaml-editing/5310)
 - [Paper - Programming environments based on structured editors : the Mentor experience](https://www.researchgate.net/publication/29650883_Programming_environments_based_on_structured_editors_the_Mentor_experience)
-- [Maybe;To be checked] [Tree Sitter](https://tree-sitter.github.io/tree-sitter/)
+- [Maybe; To be checked] [Treefrog](https://treefrog-editor.com/intro/)
 - [Maybe;To be checked] [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
 - [Maybe;To be checked] [Proposed Msc. Project @ Uni Tübingen: Refactoring Macros](http://ps.informatik.uni-tuebingen.de/teaching/thesis/2019/11/25/refactoring-macros/)
 
