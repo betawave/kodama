@@ -4,19 +4,7 @@ pub struct MarkedTree {
     tree: Tree,
     marker: Marker,
 }
-// does each entry of vector describe one depth level or are we mimicing a depth-first search until
-// we hit a leaf. 3 -> 1 -> 2 -> 0 -> 0 -> 0 -> 1 -> 0. with this sequence the following tree is
-// described. the root has 3 children, the first one has 1 child which has 2 childs (both are
-// leafs). the second child of the root node is a leaf (that means 0 in the sequence). The third
-// child of the root node has one child which also has a leaf as a child.
-// * is a node 
-// *
-// | \ \
-// *  * *
-// |    |
-// *    *
-// | \
-// *  *
+
 type Marker = Vec<usize>;
 
 impl MarkedTree {
@@ -28,17 +16,34 @@ impl MarkedTree {
     }
 
     pub fn select_child(&mut self) {
-    // change Marker in the right way, but i forgot how we want to implement the marker.
-    //self.marker.change_vec()
-         
+        if self.get_selected().has_children() {
+            self.marker.push(0);  
+            println!("joooooooo");
+        } else {
+            println!("nöööö, geht nicht");
+        }
+            
     }
 
     pub fn select_parent(&mut self) {
 
+        if self.marker.is_empty() {
+            println!("joo du bist gott, du hast dich selbst erschaffen");
+        } else {
+            self.marker.pop();
+            println!("jeeeeehaaaaa");
+        }
     }
 
     pub fn select_sibling(&mut self) {
-
+        let current_sibling_index = self.marker[self.marker.len()-1];
+        self.select_parent();
+        if self.get_selected().number_of_creations() > current_sibling_index+1 {
+           self.marker[self.marker.len()-1]++;
+           println!(" do the sibling dance"); 
+        } else {
+            println!("ick bin einzelkind!");
+        }
     }
 
     pub fn get_marker(&self)-> &Marker {
@@ -80,6 +85,14 @@ impl Tree {
 
     pub fn remove_child() {
 
+    }
+
+    pub fn has_children(&self) -> bool {
+        !self.children.is_empty()
+    }
+
+    pub fn number_of_creations(&self) -> usize {
+        self.children.len()
     }
 
 }
