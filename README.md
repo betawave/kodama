@@ -34,7 +34,7 @@ Via the Kodama project we want to explore the ideas behind structure editors and
 Project Agenda:  
 1. Implement a very basic tree Kodama and CLI editor frontend to evaluate most abstract editing experience.
    For further reasoning of this step see [TODO](). After evaluation either:
-    1. stop project if not promisi
+    1. stop project if not promising
     2. continue with 2. if interesting
 2. Implement a Rust-Kodama and integrate it into Emacs
 3. Reimplement the Rust-Kodama using the initial Rust-Kodama (i.e. bootstrap).
@@ -52,18 +52,38 @@ Lastly, in [TODO](), it contains standards documents which describe the interfac
 
 ## Related Work
 
-- [To be checked] [Very Similar Project - Vi like Structure Editor written in Rust](https://github.com/kneasle/sapling)
+### Software - Projects, Products & Extensions
+
+- [Project - Sapling: Very Similar Project - Vi like Structure Editor written in Rust](https://github.com/kneasle/sapling)
+   - only works with JSON, can not load or save
 - [Maybe;To be checked] [Tree Sitter](https://tree-sitter.github.io/tree-sitter/)
-   - [tree-edit](https://github.com/ethan-leba/tree-edit)
-   - [To be checked] [nVim Plugin Architext - Structure Editing in Vim](https://github.com/vigoux/architext.nvim)
-- [Paper - Structure Editors: Old Hat or Future Vision?](https://link.springer.com/chapter/10.1007/978-3-642-32341-6_6), [free download](https://projects.fbi.h-da.de/~b.humm/pub/Gomolka_Humm_-_Structure_Editors__Springer_ENASE_.pdf)
+   - [Emacs Extension - tree-edit](https://github.com/ethan-leba/tree-edit)
+      - interactive structure editing, usable but rough and below usefulness vs. pain threshhold
+   - [To be checked] [nVim Plugin - Architext: Structure Editing in Vim](https://github.com/vigoux/architext.nvim)
+- [(dead) Project - Fructure: Very Nice Structure Editing Prototype with many good ideas!](https://github.com/disconcision/fructure)
+   - seems to be dead
+   - Best UI so far
+      - real eye-candy
+      - interaction design is superb and should be an inspiration
+   - subset of scheme only
 - [(dead?) Project - Programtree](http://www.programtree.com/intro.htm) 
-- [Msc. Thesis - Forest Structure Editor for TypeScript](https://www.research-collection.ethz.ch/handle/20.500.11850/526812), [pdf](https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/526812/masters-thesis-final-eth-Voinov-title-page.pdf?sequence=1&isAllowed=y), [talk on youtube](https://www.youtube.com/watch?v=ze_nJlKkckg), [github repo](https://github.com/tehwalris/forest)
+- [Project - Forest: Structure Editor for TypeScript](https://github.com/tehwalris/forest)
+- [Emacs Extension - GopCaml Structure Editor for OCaml](https://github.com/Gopiandcode/gopcaml-mode)
+- [Maybe;To be checked] [Product - Treefrog](https://treefrog-editor.com/intro/)
+
+### Ideas - Papers, Blogposts, Forums & Talks
+
+- [Paper - Programming environments based on structured editors : the Mentor experience](https://www.researchgate.net/publication/29650883_Programming_environments_based_on_structured_editors_the_Mentor_experience)
+- [Paper - Structure Editors: Old Hat or Future Vision?](https://link.springer.com/chapter/10.1007/978-3-642-32341-6_6), [free download](https://projects.fbi.h-da.de/~b.humm/pub/Gomolka_Humm_-_Structure_Editors__Springer_ENASE_.pdf)
+- [Msc. Thesis - Forest: Structure Editor for TypeScript](https://www.research-collection.ethz.ch/handle/20.500.11850/526812), [pdf](https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/526812/masters-thesis-final-eth-Voinov-title-page.pdf?sequence=1&isAllowed=y), [talk on youtube](https://www.youtube.com/watch?v=ze_nJlKkckg)
 - [Paper by Huet - The Zipper](https://dl.acm.org/doi/10.1017/S0956796897002864), [pdf](https://www.st.cs.uni-saarland.de/edu/seminare/2005/advanced-fp/docs/huet-zipper.pdf)
    - [Paper - Clase: cursor library for a structured editor](https://dl.acm.org/doi/10.1145/1543134.1411302), [pdf](http://www.doc.ic.ac.uk/~tora/clase/CLASE-Short.pdf)
-   - [Paper - GopCaml Structure Editor for OCaml](https://arxiv.org/abs/2207.07423), [github repo](https://github.com/Gopiandcode/gopcaml-mode), [tutorial](https://discuss.ocaml.org/t/introducing-gopcaml-mode-structural-ocaml-editing/5310)
-- [Paper - Programming environments based on structured editors : the Mentor experience](https://www.researchgate.net/publication/29650883_Programming_environments_based_on_structured_editors_the_Mentor_experience)
-- [Maybe; To be checked] [Treefrog](https://treefrog-editor.com/intro/)
+   - [Paper - GopCaml Structure Editor for OCaml](https://arxiv.org/abs/2207.07423), [tutorial](https://discuss.ocaml.org/t/introducing-gopcaml-mode-structural-ocaml-editing/5310)
+- [TODO] [Paper - Robust Projectional Editing](https://voelter.de/data/pub/robustProjectionalEditing.pdf)
+- [List - List of Projectional Editors](https://www.alexeyshmalko.com/20200830010958/)
+- [List - Awesome Structure Editors](https://github.com/yairchu/awesome-structure-editors/blob/main/README.md)
+- [Blogpost - Martin Fowler: ProjectionalEditing](https://martinfowler.com/bliki/ProjectionalEditing.html)
+- [Subreddit - Projectional Programming](https://www.reddit.com/r/nosyntax/)
 - [Maybe;To be checked] [Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
 - [Maybe;To be checked] [Proposed Msc. Project @ Uni Tübingen: Refactoring Macros](http://ps.informatik.uni-tuebingen.de/teaching/thesis/2019/11/25/refactoring-macros/)
 
