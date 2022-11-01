@@ -36,10 +36,19 @@ impl MarkedTree {
     }
 
     pub fn select_sibling(&mut self) {
+        
+        if self.marker.is_empty() {
+            println!("waisen können keine eltern auswählen"); 
+            return;
+        }
+        
         let current_sibling_index = self.marker[self.marker.len()-1];
         self.select_parent();
+        
+
         if self.get_selected().number_of_creations() > current_sibling_index+1 {
-           self.marker[self.marker.len()-1]++;
+           let last_index = self.marker.len()-1;
+           self.marker[last_index]+=1;
            println!(" do the sibling dance"); 
         } else {
             println!("ick bin einzelkind!");
@@ -61,9 +70,31 @@ impl MarkedTree {
         walker    
     }
 
-    pub fn delete_selected() {
+    pub fn get_selected_mutabel(&mut self)-> &mut Tree {
+
+        let mut walker = &mut self.tree;
+
+        for child_index in self.marker.iter() {
+            walker = &mut walker.children[*child_index];
+        }
+
+        walker    
+    }
+    
+    pub fn delete_selected(&mut self) {
         //this function should take the information of the marker and delete the selected node of the Tree. The function will delete the selected subtree.
         // The marker will be changed to the position of the parent of the deleted subtree.
+        if self.marker.is_empty() {
+            println!("Die Welt kann sich nicht selbst zerstören"); 
+            return;
+        }
+        let current_sibling_index = self.marker[self.marker.len()-1];
+        self.select_parent();
+        self.get_selected_mutabel().remove_child(current_sibling_index);
+    }
+
+    pub fn create_child() {
+
     }
 }
 
@@ -83,8 +114,8 @@ impl Tree {
         self.children.push(child);
     }
 
-    pub fn remove_child() {
-
+    pub fn remove_child(&mut self, index: usize) {
+        self.children.remove(index);
     }
 
     pub fn has_children(&self) -> bool {
