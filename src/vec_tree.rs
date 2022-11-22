@@ -126,6 +126,35 @@ impl Tree {
         self.children.len()
     }
 
+    pub fn print_me(&self) -> Vec<String> {
+        let mut rows = Vec::<String>::new();
+        rows.push(String::from("*"));
+        let last_child_index = self.children.len();
+        for (i, child) in self.children.iter().enumerate() {
+            let mut child_rows = child.print_me();
+            let mut child_child_prefix = "";
+            let mut child_child_child_prefix = "";
+            if i == last_child_index {
+                child_child_prefix = "└── ";
+                child_child_child_prefix = "    ";
+            } else {
+                child_child_prefix = "├── ";
+                child_child_child_prefix = "|   ";
+            }
+            let mut nu_child_rows = Vec::<String>::new();
+            for (i, child_row) in child_rows.iter().enumerate() {
+                if i == 0 {
+                    nu_child_rows.push(String::from(child_child_prefix) + child_row);
+                } else {
+                    nu_child_rows.push(String::from(child_child_child_prefix) + child_row);
+                }
+            }
+            rows.append(&mut nu_child_rows);
+        }
+        rows
+    }
+    
+
 }
 
 #[cfg(test)]
