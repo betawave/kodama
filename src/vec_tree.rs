@@ -70,7 +70,7 @@ impl MarkedTree {
         walker    
     }
 
-    pub fn get_selected_mutabel(&mut self)-> &mut Tree {
+    pub fn get_selected_mutable(&mut self)-> &mut Tree {
 
         let mut walker = &mut self.tree;
 
@@ -90,11 +90,11 @@ impl MarkedTree {
         }
         let current_sibling_index = self.marker[self.marker.len()-1];
         self.select_parent();
-        self.get_selected_mutabel().remove_child(current_sibling_index);
+        self.get_selected_mutable().remove_child(current_sibling_index);
     }
 
-    pub fn create_child() {
-
+    pub fn create_child(&mut self) {
+        self.get_selected_mutable().add_child(Tree::new());
     }
 }
 
