@@ -54,10 +54,6 @@ impl MarkedTree {
             println!("ick bin einzelkind!");
         }
     }
-
-    pub fn get_marker(&self)-> &Marker {
-        &self.marker
-    }
     
     pub fn get_selected(&self)-> &Tree {
 
