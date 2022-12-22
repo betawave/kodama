@@ -81,13 +81,15 @@ fn main() {
 			}
 		    }
 		}
-		term.clear_screen().expect("Could not clear screen!");
 		if !matched {
+		    term.clear_screen().expect("Could not clear screen!");
+            println!("{}", buffer.print_me());
 		    println!("Could not parse '{}'", in_char);
 		} else if action != None && object != None {
 		    let act = action.unwrap();
 		    let obj = object.unwrap();
 		    let res = buffer.execute(act, obj);
+		    term.clear_screen().expect("Could not clear screen!");
             println!("{}", buffer.print_me());
 		    println!("Executing {} {}", act, obj);
             match res {
