@@ -66,7 +66,7 @@ fn main() {
 			for i in 0..object_bindings.len() {
 			    if object_bindings[i].key == in_char {
 				object = Some(object_bindings[i].object);
-				action = Some(AbstractASTAction::Move);
+				action = Some(AbstractASTAction::GoTo);
 				matched = true;
 				break;
 			    }

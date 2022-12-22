@@ -1,30 +1,14 @@
 use std::vec::Vec;
-use crate::zipper::{Zipper, Tree};
-
-pub struct AbstractAST {
-    children: Vec<AbstractAST>
-}
-
-impl Tree for AbstractAST {
-    fn empty() -> Self {
-	AbstractAST {
-	    children: Vec::new()
-	}
-    }
-
-    fn destruct(self) -> Vec<Self> {
-	self.children
-    }
-}
+use crate::vec_tree::{MarkedTree};
 
 pub struct AbstractASTBuffer {
-    zipper: Zipper<AbstractAST>,
+    marked_tree: MarkedTree
 }
 
 impl AbstractASTBuffer {
     pub fn new() -> Self {
 	AbstractASTBuffer {
-	    zipper: Zipper::new(AbstractAST { children: Vec::new() })
+	    marked_tree: MarkedTree::new()
 	}
     }
 
@@ -34,10 +18,14 @@ impl AbstractASTBuffer {
 	    AbstractASTAction::GoTo => {
 		match object {
 		    AbstractASTObject::This => Ok(()),
-		    AbstractASTObject::Sibling =>
-			self.zipper.next().map_err(|_dc| "No next sibling!".to_string()),
-		    AbstractASTObject::Child =>
-			self.zipper.down().map_err(|_dc| "No children!".to_string()),
+		    AbstractASTObject::Sibling => {
+			    self.marked_tree.select_sibling();
+                Ok(())
+            }
+		    AbstractASTObject::Child => {
+		    	self.marked_tree.select_child();
+                Ok(())
+            }
 		    _ => Err("GoTo not yet implemented for given object.".to_string()),
 		}
 	    },

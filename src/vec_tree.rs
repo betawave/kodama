@@ -8,7 +8,11 @@ pub struct MarkedTree {
 type Marker = Vec<usize>;
 
 impl MarkedTree {
-    pub fn mark_tree(tree: Tree)-> Self {
+    pub fn new() -> Self {
+        Self::mark_tree(Tree::new())
+    }
+
+    pub fn mark_tree(tree: Tree) -> Self {
         MarkedTree {
             tree: tree, 
             marker: Marker::new(),
@@ -26,7 +30,6 @@ impl MarkedTree {
     }
 
     pub fn select_parent(&mut self) {
-
         if self.marker.is_empty() {
             println!("joo du bist gott, du hast dich selbst erschaffen");
         } else {
@@ -36,7 +39,6 @@ impl MarkedTree {
     }
 
     pub fn select_sibling(&mut self) {
-        
         if self.marker.is_empty() {
             println!("waisen können keine eltern auswählen"); 
             return;
@@ -56,7 +58,6 @@ impl MarkedTree {
     }
     
     pub fn get_selected(&self)-> &Tree {
-
         let mut walker = &self.tree;
 
         for child_index in self.marker.iter() {
@@ -67,7 +68,6 @@ impl MarkedTree {
     }
 
     pub fn get_selected_mutable(&mut self)-> &mut Tree {
-
         let mut walker = &mut self.tree;
 
         for child_index in self.marker.iter() {
@@ -91,6 +91,16 @@ impl MarkedTree {
 
     pub fn create_child(&mut self) {
         self.get_selected_mutable().add_child(Tree::new());
+    }
+
+    pub fn print_me(&self) -> String {
+
+        let mut result = String::new();
+
+        for line in self.tree.print_me().into_iter(){
+            result.push_str(line.as_str());
+        }
+        result
     }
 }
 
