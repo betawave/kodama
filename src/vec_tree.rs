@@ -49,8 +49,9 @@ impl MarkedTree {
         
 
         if self.get_selected().number_of_creations() > current_sibling_index+1 {
-           let last_index = self.marker.len()-1;
-           self.marker[last_index]+=1;
+           //let last_index = self.marker.len()-1;
+           //self.marker[last_index]+=1;
+           self.marker.push(current_sibling_index+1);
            println!(" do the sibling dance"); 
         } else {
             println!("ick bin einzelkind!");
@@ -99,6 +100,7 @@ impl MarkedTree {
 
         for line in self.tree.print_me().into_iter(){
             result.push_str(line.as_str());
+            result.push_str("\n");
         }
         result
     }
@@ -140,7 +142,7 @@ impl Tree {
             let mut child_rows = child.print_me();
             let mut child_child_prefix = "";
             let mut child_child_child_prefix = "";
-            if i == last_child_index {
+            if i+1 == last_child_index {
                 child_child_prefix = "└── ";
                 child_child_child_prefix = "    ";
             } else {

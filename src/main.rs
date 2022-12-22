@@ -87,11 +87,14 @@ fn main() {
 		} else if action != None && object != None {
 		    let act = action.unwrap();
 		    let obj = object.unwrap();
+		    let res = buffer.execute(act, obj);
+            println!("{}", buffer.print_me());
 		    println!("Executing {} {}", act, obj);
-		    match buffer.execute(act, obj) {
-			Err(message) => println!("{}", message),
-			Ok(()) => (),
+            match res {
+			    Err(message) => println!("{}", message),
+			    Ok(()) => (),
 		    }
+
 		    action = None;
 		    object = None;
 		}

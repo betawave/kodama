@@ -16,21 +16,38 @@ impl AbstractASTBuffer {
 		   -> Result<(), String> {
 	match action {
 	    AbstractASTAction::GoTo => {
-		match object {
-		    AbstractASTObject::This => Ok(()),
-		    AbstractASTObject::Sibling => {
-			    self.marked_tree.select_sibling();
-                Ok(())
+            match object {
+                AbstractASTObject::This => Ok(()),
+                AbstractASTObject::Sibling => {
+                    self.marked_tree.select_sibling();
+                    Ok(())
+                }
+                AbstractASTObject::Child => {
+                    self.marked_tree.select_child();
+                    Ok(())
+                }
+                AbstractASTObject::Parent => {
+                    self.marked_tree.select_parent();
+                    Ok(())
+                }
+                _ => Err("GoTo not yet implemented for given object.".to_string()),
             }
-		    AbstractASTObject::Child => {
-		    	self.marked_tree.select_child();
-                Ok(())
-            }
-		    _ => Err("GoTo not yet implemented for given object.".to_string()),
-		}
 	    },
+	    AbstractASTAction::Insert => {
+            match object {
+                AbstractASTObject::Child => {
+                    self.marked_tree.create_child();
+                    Ok(())
+                },
+                _ => Err("Insert not yet implemented for given object.".to_string()),
+            }
+        },
 	    _ => Err("Procedure not implemented!".to_string()),
 	}
+    }
+
+    pub fn print_me(&self) -> String {
+        self.marked_tree.print_me()
     }
 }
 
