@@ -1,5 +1,5 @@
 use std::vec::Vec;
-use crate::vec_tree::{MarkedTree};
+use crate::vec_tree::{MarkedTree, print_tree};
 
 pub struct AbstractASTBuffer {
     marked_tree: MarkedTree
@@ -47,7 +47,7 @@ impl AbstractASTBuffer {
     }
 
     pub fn print_me(&self) -> String {
-        self.marked_tree.print_me()
+        print_tree(&self.marked_tree)
     }
 }
 
