@@ -7,19 +7,21 @@ pub struct MarkedTree {
 }
 
 pub fn print_tree(marked_tree: &MarkedTree) -> String {
-    let mut stack = Vec::<(&Tree, usize)>::new();
-    let mut queue = VecDeque::<(&Tree, usize)>::new();
+    let mut stack = Vec::<(&Tree, Vec::<usize>)>::new();
+    let mut queue = VecDeque::<(&Tree, Vec::<usize>)>::new();
 
     // building the Depth-First-Search-List in queue
-    stack.push((&marked_tree.tree, 0));
+    stack.push((&marked_tree.tree, vec![]));
     while !stack.is_empty() {
-        let (temp_tree, temp_generation) = stack.pop().unwrap();
+        let (temp_tree, temp_mark) = stack.pop().unwrap();
 
-        for child_tree in temp_tree.children.iter().rev() {
-            stack.push((child_tree, temp_generation+1));
+        for (i, child_tree) in temp_tree.children.iter().enumerate().rev() {
+            let mut nu_marker = temp_mark.clone();
+            nu_marker.push(i);
+            stack.push((child_tree, nu_marker));
         } 
 
-        queue.push_back((temp_tree, temp_generation));
+        queue.push_back((temp_tree, temp_mark));
     }
 
 
@@ -41,16 +43,21 @@ pub fn print_tree(marked_tree: &MarkedTree) -> String {
     while !queue.is_empty() {
         // solange die queue nicht leer ist wird mit der naechsten zeile das nächste bisschen
         // information extrahiert
-        let (current_elem, current_gen) = queue.pop_front().unwrap();
+        let (current_elem, current_marker) = queue.pop_front().unwrap();
 
         // als nächstes gibt es eine zustandsänderung durch veränderung des counters
         //jetzt wird die aktuelle generation des counters dekrementiert
         let last_index = counter.len()-1;
         counter[last_index] -= 1;
 
+        if current_marker == marked_tree.marker {
+            lines.push(counter_to_prefix(&counter) + &String::from("X"));
+        } else {
+            lines.push(counter_to_prefix(&counter) + &String::from("•"));
+        };
         //erhaltene information wird mit der counter_to_prefix() in eine fuer nutzende person
         //lesbare zeile umgewandelt.
-        lines.push(counter_to_prefix(&counter) + &String::from("*"));
+        
         
         // falls das aktuelle element der queue kinder hat wird der counter erweitert, falls nicht
         // wird der counter verkürzt
@@ -272,17 +279,6 @@ impl MarkedTree {
     pub fn create_child(&mut self) {
         self.get_selected_mutable().add_child(Tree::new());
     }
-
-    pub fn print_me(&self) -> String {
-
-        let mut result = String::new();
-
-        for line in self.tree.print_me().into_iter(){
-            result.push_str(line.as_str());
-            result.push_str("\n");
-        }
-        result
-    }
 }
 
 
@@ -312,35 +308,6 @@ impl Tree {
     pub fn number_of_creations(&self) -> usize {
         self.children.len()
     }
-
-    pub fn print_me(&self) -> Vec<String> {
-        let mut rows = Vec::<String>::new();
-        rows.push(String::from("*"));
-        let last_child_index = self.children.len();
-        for (i, child) in self.children.iter().enumerate() {
-            let mut child_rows = child.print_me();
-            let mut child_child_prefix = "";
-            let mut child_child_child_prefix = "";
-            if i+1 == last_child_index {
-                child_child_prefix = "└── ";
-                child_child_child_prefix = "    ";
-            } else {
-                child_child_prefix = "├── ";
-                child_child_child_prefix = "|   ";
-            }
-            let mut nu_child_rows = Vec::<String>::new();
-            for (i, child_row) in child_rows.iter().enumerate() {
-                if i == 0 {
-                    nu_child_rows.push(String::from(child_child_prefix) + child_row);
-                } else {
-                    nu_child_rows.push(String::from(child_child_child_prefix) + child_row);
-                }
-            }
-            rows.append(&mut nu_child_rows);
-        }
-        rows
-    }
-    
 
 }
 
